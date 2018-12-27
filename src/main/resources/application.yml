@@ -9,3 +9,19 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#关闭默认超时时间
+#hystrix:
+#  commond:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: true
+
+#设置超时时间
+hystrix:
+  commond:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
